@@ -1,0 +1,35 @@
+%% task 2
+T = table2timetable(fcp2);
+T1 =table2timetable(fdff3);
+T2 =table2timetable(fcpiau3);
+T3 =table2timetable(fdco3);
+T4 =table2timetable(fdsp3);
+T5 =table2timetable(fdtw3);
+T6 =table2timetable(fgdp3);
+T7 =table2timetable(fgfde3);
+T8 =table2timetable(findpro3);
+T9 =table2timetable(ftotci3);
+T10 =table2timetable(fbase3);
+T11 =table2timetable(funrate3);
+
+tsyc = synchronize(T,T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11);
+tsyc2 = synchronize(T,T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,'union');
+tsyc3 = synchronize(T,T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,'intersection');
+
+
+fredfil = fillmissing(tsyc,'spline');
+
+plot(fredfil.Date,fredfil.Value_T,'r:*');
+hold on
+plot(fredfil.Date,fredfil.Value_T1,'b:*');
+hold on
+plot(fredfil.Date,fredfil.Value_T2,'g:*');
+
+%ts2 = timeseries(fredfil.Date);
+ 
+tsc = tscollection(fredfil);
+ %data = ts('fredfil','collapse','monthly');
+ %ts = data.Open;
+ %ts.TimeInfo.Format = 'yyyy-mm';
+ %plot(ts);
+ T1 = timeseries([1 2],[datestr(now); datestr(now+1)]);
