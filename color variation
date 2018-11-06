@@ -1,0 +1,13 @@
+%% task 3
+
+dx = diff(fdco3.Value);
+
+blue = dx >0;
+red  = dx <0;
+
+
+x=[fdco3.Date(1:end-1) fdco3.Date(2:end)]';
+y=[fdco3.Value(1:end-1) fdco3.Value(2:end)]';
+
+figure;
+plot(x(:,red),y(:,red),'b--',x(:,blue),y(:,blue),'r--');
