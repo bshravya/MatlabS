@@ -1,0 +1,110 @@
+function colorvariation(value1,date1)
+
+difference = diff(value1);
+ 
+increasingcolor = difference >0;
+decreasingcolor = difference <0;
+
+x=[date1(1:end-1) date1(2:end)]';
+y=[value1(1:end-1) value1(2:end)]';
+
+plot(x(:,decreasingcolor),y(:,decreasingcolor),'y--',x(:,increasingcolor),y(:,increasingcolor),'r--');
+end
+
+figure;
+value1 = fcp2.Value;
+date1 = fcp2.Date;
+colorvariation(value1,date1)
+ylabel('value1');
+xlabel('Date1');
+title('Fred-cp figure 1')
+
+figure;
+value1 = fdff3.Value;
+date1 = fdff3.Date;
+colorvariation(value1,date1)
+ylabel('value1');
+xlabel('Date1');
+title('Fred-Dff figure 2')
+
+figure;
+value1 = fcpiau3.Value;
+date1 = fcpiau3.Date;
+colorvariation(value1,date1)
+ylabel('value1');
+xlabel('Date1');
+title('Fred-cpiaucsl figure 3')
+ 
+figure;
+
+value1 = fdco3.Value;
+date1 = fdco3.Date;
+colorvariation(value1,date1)
+ylabel('value1');
+xlabel('Date1');
+title('Fred-dcoilwtico figure 4')
+
+figure;
+value1 = fgdp3.Value;
+date1 = fgdp3.Date;
+colorvariation(value1,date1)
+ylabel('value1');
+xlabel('Date1');
+title('Fred-Gdp figure 5')
+
+figure;
+value1 = fgfde3.Value;
+date1 = fgfde3.Date;
+colorvariation(value1,date1)
+ylabel('value1');
+xlabel('Date1');
+title('Fred-Gfdegdq188s figure 6')
+
+figure;
+value1 = findpro3.Value;
+date1 = findpro3.Date;
+colorvariation(value1,date1)
+ylabel('value1');
+xlabel('Date1');
+title('Fred-findpro figure 7')
+
+figure;
+plot(ftotci3.Date,ftotci3.Value,'b--h');
+value1 = ftotci3.Value;
+date1 = ftotci3.Date;
+colorvariation(value1,date1)
+ylabel('value1');
+xlabel('Date1');
+title('Fred-Totci figure 8')
+
+figure;
+value1 = fbase3.Value;
+date1 = fbase3.Date;
+colorvariation(value1,date1)
+ylabel('value1');
+xlabel('Date1');
+title('Fred-Base figure 9')
+
+figure;
+value1 = fdtw3.Value;
+date1 = fdtw3.Date;
+colorvariation(value1,date1)
+ylabel('value1');
+xlabel('Date1');
+title('Fred-dtwexm figure 10')
+
+figure;
+value1 = findpro3.Value;
+date1 = findpro3.Date;
+colorvariation(value1,date1)
+ylabel('value1');
+xlabel('Date1');
+title('Fred-Indpro figure 11')
+
+figure;
+value1 = funrate3.Value;
+date1 = funrate3.Date;
+colorvariation(value1,date1)
+ylabel('value1');
+xlabel('Date1');
+title('Fred-Unrate figure 12')
