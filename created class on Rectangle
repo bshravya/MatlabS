@@ -1,0 +1,22 @@
+classdef Rectangle
+    properties
+     Lenght = 10
+     width = 22
+     Area
+     Perimeter
+    end
+      methods
+           function obj = Rectangle(l,w)
+         if nargin > 0
+             obj.Lenght = l;
+             obj.width = w;
+         end
+           end
+           function val = get.Area(obj)
+            val = obj.Lenght*obj.width;
+           end
+           function per = get.Perimeter(obj)
+              per = 2*(obj.Lenght+obj.width);
+           end
+       end
+  end
