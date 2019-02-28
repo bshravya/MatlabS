@@ -1,0 +1,15 @@
+file2 = dir('matlabfiles'); 
+file1=file2(~ismember({file2.name},{'.','..'})); % removing . , .. folders 
+filetest = struct2table(file1); % converting struct to table 
+
+Datesource = filetest.name; 
+
+datemodified = datetime(filetest.date,'Format','yyyy-MM-dd'); % changing date format
+date = datetime('today');
+
+refresh = table(Datesource,datemodified);
+status = (yyyymmdd(refresh.datemodified) == yyyymmdd(date)); 
+
+refreshreport_table= table(Datesource,datemodified,status);
+
+csvwrite('refreshreport.csv',refreshreport_table);
