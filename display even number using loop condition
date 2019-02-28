@@ -1,0 +1,21 @@
+function [x]=evennumloop(n1,n2)
+%%task 4
+%Make a function that generates even numbers until 50,000.
+%Use a for loop and if condition to accomplish this.
+B1 = zeros(50000,1);  
+x = [];
+for even = n1:n2
+    if mod(even,2)== 0
+        x = [x,even];
+         end
+end
+
+% i=1;
+% for even1 = 2:50000
+%     if mod(even1,2)== 0
+%         even5(i) =even1;
+%         i=i+1;
+%     end
+% end
+
+end
