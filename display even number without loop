@@ -1,0 +1,8 @@
+function num = evenwithloop(x1,x2)
+ %% task 5 
+ %Make a function to do the same as above but without the 
+ %use of any loops and conditions.
+%  B = zeros(50000,1);  
+ num = x1:2:x2;
+   % display(x);
+ end
