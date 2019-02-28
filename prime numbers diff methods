@@ -1,0 +1,33 @@
+N= 1;
+M=15;
+primenum1(N,M)
+%%
+n1=1;
+n2=2;
+jprime(n)
+%%
+num1 =input('Enter num1 value ');
+num2 =input('Enter num2 value ');
+n = num1 : num2 ;
+p = isprime(n);
+n(p)    %displays the primes
+%% 
+N=11;
+PrimeNum(N)
+%%
+x = 1; n=30;
+while numel(primes(x)) < n
+x = x+1;
+end
+primes(x); 
+
+%%
+nthprime(2^32);
+f = factor(10)% prime factor
+f = factorial(10)% factiorial N!
+n = [0 1 2; 3 4 5];
+f = factorial(n)
+A = [-5 17; 10 0];
+B = [-15 3; 100 0];
+G = gcd(A,B)% Greatest common divisor
+
