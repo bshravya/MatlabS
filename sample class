@@ -1,0 +1,18 @@
+classdef SampleClass
+properties
+    result ;
+end
+
+methods
+    function obj = method1( a , b) 
+       obj.result = obj.method2 (a,b) ;
+    end
+end
+methods (Access= private)
+    function y = method3 ( a , b)
+        y = a + b ; 
+    end  
+
+    end   
+
+end
