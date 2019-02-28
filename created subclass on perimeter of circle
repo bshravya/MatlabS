@@ -1,0 +1,14 @@
+classdef Perimeter < Circlesuper
+     properties
+         P=pi
+         Per
+     end
+         methods
+           function obj = Perimeter(Radius)
+               obj = obj@Circlesuper(Radius); 
+           end
+           function val = get.Per(obj)
+               val = 2*obj.P*obj.Radius;
+           end
+         end
+end
