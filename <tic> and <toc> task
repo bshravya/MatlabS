@@ -1,0 +1,78 @@
+%% task 6
+%<tic> and <toc>
+
+% for n= 1:50000
+%    tic 
+%     x3= mod(n,2);
+%    t(n)=toc;
+%     display(x3);
+% end
+
+tic 
+evennumloop(n1,n2)
+toc;
+
+tic 
+evenwithloop(x1,x2)
+toc;
+
+%% show me how the above functions compare with each other.
+n1=2;
+n2=50000;
+
+x1=2;
+x2=50000;
+
+e= @() evennumloop(n1,n2)
+ew = @() evenwithloop(x1,x2)
+timediff = timeit(e)-timeit(ew);
+
+%% 
+for evenN = 1:100
+tic
+evenwithloop()
+en(evenN)=toc;
+end
+averageTime = toc/100; 
+
+%%
+for evennum = 2:50000
+      tic
+   if mod(evennum,2)== 0
+    display(evennum);
+    tn1(evennum)=toc;
+    end
+end
+
+%%
+tic
+for i = 1:50000
+    number1=1/(i+1);
+end
+without = toc
+%%
+tic
+B = zeros(50000,1);      
+for j = 1:50000
+    number2=1/(j+1);
+end
+with = toc
+compare = without - with
+
+%%
+
+n1=2;
+n2=50000;
+tic
+evennumloop(n1,n2)
+withloop = toc
+
+%%
+x1=2;
+x2=50000;
+tic
+evenwithloop(x1,x2)
+withoutloop = toc
+
+compare = withloop - withoutloop
+
