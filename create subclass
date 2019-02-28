@@ -1,0 +1,18 @@
+classdef SubAbsClass < AbsClass
+
+    properties
+        O1
+    end
+
+methods
+        function obj=SubAbsClass(a,b)
+            obj.O1=absMethod(a,b);
+        end
+    end
+    methods (Static)
+
+        function out = absMethod(a,b)
+            out = a + b;
+        end
+    end
+end
