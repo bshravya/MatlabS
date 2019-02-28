@@ -1,0 +1,13 @@
+classdef (Abstract)Circlesuper
+    properties
+       Radius
+    end
+    
+    methods 
+           function obj = Circlesuper(r)
+         
+             obj.Radius = r;
+     
+           end
+    end
+end
