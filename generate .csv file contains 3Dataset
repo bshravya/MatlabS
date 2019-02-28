@@ -1,0 +1,93 @@
+Product= repmat('CORN   ',120,1);
+ProductCode=  repmat('C',120,1);
+LocalProductCode = repmat(7777,120,1);
+TradingExchange4 = repmat('CME',120,1);
+
+ n = 9:18;
+ N = n';
+ mf = [repmat('F',10,1),num2str(N)];
+ mg = [repmat('G',10,1),num2str(N)];
+ mh = [repmat('H',10,1),num2str(N)];
+ mj = [repmat('J',10,1),num2str(N)];
+ mk = [repmat('K',10,1),num2str(N)]; 
+ mm = [repmat('M',10,1),num2str(N)];
+ mn = [repmat('N',10,1),num2str(N)];
+ mq = [repmat('Q',10,1),num2str(N)];
+ mu = [repmat('U',10,1),num2str(N)];
+ mv = [repmat('V',10,1),num2str(N)];
+ mx = [repmat('X',10,1),num2str(N)];
+ mz = [repmat('Z',10,1),num2str(N)];
+ 
+ MonthCode = [mf;mg;mh;mj;mk;mm;mn;mq;mu;mv;mx;mz];
+ 
+ nl= 2009:2018;
+ NL = nl';
+ mfl = [repmat('F',10,1),num2str(NL)];
+ mgl = [repmat('G',10,1),num2str(NL)];
+ mhl = [repmat('H',10,1),num2str(NL)];
+ mjl = [repmat('J',10,1),num2str(NL)];
+ mkl = [repmat('K',10,1),num2str(NL)]; 
+ mml = [repmat('M',10,1),num2str(NL)];
+ mnl = [repmat('N',10,1),num2str(NL)];
+ mql = [repmat('Q',10,1),num2str(NL)];
+ mul = [repmat('U',10,1),num2str(NL)];
+ mvl = [repmat('V',10,1),num2str(NL)];
+ mxl = [repmat('X',10,1),num2str(NL)];
+ mzl = [repmat('Z',10,1),num2str(NL)];
+ 
+ MonthCodeLong =[mfl;mgl;mhl;mjl;mkl;mml;mnl;mql;mul;mvl;mxl;mzl];
+
+ IVM = repmat('OWF/CME_CORN_C_C',10,1);
+ IVModelF= [IVM,mfl,repmat('_IVM',10,1)];
+ IVModelG= [IVM,mgl,repmat('_IVM',10,1)];
+ IVModelH= [IVM,mhl,repmat('_IVM',10,1)];
+ IVModelJ= [IVM,mjl,repmat('_IVM',10,1)];
+ IVModelK= [IVM,mkl,repmat('_IVM',10,1)];
+ IVModelM= [IVM,mml,repmat('_IVM',10,1)];
+ IVModelN= [IVM,mnl,repmat('_IVM',10,1)];
+ IVModelQ= [IVM,mql,repmat('_IVM',10,1)];
+ IVModelU= [IVM,mul,repmat('_IVM',10,1)];
+ IVModelV= [IVM,mvl,repmat('_IVM',10,1)];
+ IVModelX= [IVM,mxl,repmat('_IVM',10,1)];
+ IVModelZ= [IVM,mzl,repmat('_IVM',10,1)];
+ IVModel =[IVModelF;IVModelG;IVModelH;IVModelJ;IVModelK;IVModelM;IVModelN;IVModelQ;IVModelU;IVModelV; IVModelX;IVModelZ];
+ 
+ IVS =repmat('OWf/CME_CORN_C_C_IVS',10,1);
+ IVSurfaceF= [IVS,mfl,repmat('_IVS',10,1)];
+ IVSurfaceG= [IVS,mgl,repmat('_IVS',10,1)];
+ IVsurfaceH= [IVS,mhl,repmat('_IVS',10,1)];
+ IVSurfaceJ= [IVS,mjl,repmat('_IVS',10,1)];
+ IVSurfaceK= [IVS,mkl,repmat('_IVS',10,1)];
+ IVSurfaceM= [IVS,mml,repmat('_IVS',10,1)];
+ IVSurfaceN= [IVS,mnl,repmat('_IVS',10,1)];
+ IVSurafceQ= [IVS,mql,repmat('_IVS',10,1)];
+ IVSurfaceU= [IVS,mul,repmat('_IVS',10,1)];
+ IVSurfaceV= [IVS,mvl,repmat('_IVS',10,1)];
+ IVSurfaceX= [IVS,mxl,repmat('_IVS',10,1)];
+ IVSurfaceZ= [IVS,mzl,repmat('_IVS',10,1)];
+ IVSurface = [ IVSurfaceF; IVSurfaceG; IVsurfaceH; IVSurfaceJ;IVSurfaceK;IVSurfaceM; IVSurfaceN;IVSurafceQ; IVSurfaceU; IVSurfaceV; IVSurfaceX;IVSurfaceZ];
+ 
+Fu =repmat('SRF/CME_CORN',10,1);
+FutureF =[Fu,mfl];
+FutureG =[Fu,mgl];
+FutureH =[Fu,mhl];
+FutureJ =[Fu,mjl];
+FutureK =[Fu,mkl];
+FutureM =[Fu,mml];
+FutureN =[Fu,mnl];
+FutureQ =[Fu,mql];
+FutureU =[Fu,mul];
+FutureV =[Fu,mvl];
+FutureX =[Fu,mxl];
+FutureZ =[Fu,mzl];
+Future = [FutureF;FutureG;FutureH;FutureJ;FutureK;FutureM;FutureN;FutureQ;FutureU;FutureV;FutureX;FutureZ];
+ 
+ Corndata= table(Product4,ProductCode4,LocalProductCode,MonthCode, MonthCodeLong,TradingExchange4,IVModel,IVSurface,Future);
+
+ writetable(Corndata,'corndata.csv','Delimiter',',');
+
+ importfile = detectImportOptions('corndata.csv');
+ T = readtable('corndata.csv');
+  
+
+ 
