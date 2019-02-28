@@ -1,0 +1,13 @@
+function readmatfiles(N)
+
+for k =1:N
+    
+filename ='fred-INDPRO.csv'
+source = readtable(filename);
+% pathname = fileparts('C:\Users\ussp-tcu\Documents\MATLAB\New Folder');
+name = sprintf("fred_INDPRO_%s.mat",datestr(now,'mm-dd-yyyy HH-MM'));
+save(fullfile(name),'source');
+
+ end
+
+end
